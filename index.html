@@ -11,17 +11,20 @@
   <title>Redmont Anarchy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
+    :root {--bg-colour:#181A1B; --text-colour:#ffffff; --button-bg:#333333}
+    body.light-mode {--bg-colour: #ffffff; --text-colour: #1a1a1a; --button-bg: #f0f0f0}
+    
     html {scrollbar-gutter: stable}
-    body {font-family:Arial; padding:50px}
+    body {background-color: var(--bg-colour); color: var(--text-colour); font-family:Arial; padding:50px}
     section {display: none; scroll-margin-top:100px}
     section:target {display:block}
     nav a {text-decoration: none; color:inherit; font-weight:600; padding:10px; text-transform:uppercase}
     ol li {padding-bottom:10px}
     h1, img {display:inline-block; vertical-align:middle}
     @media (hover: hover) {
-      nav a:hover {background-color: #dddddd; box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3); outline: none;}
+      nav a:hover {background-color: var(--button-bg); color: var(--text-colour); box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3); outline: none;}
     }
-    nav a:active {background-color: #dddddd; box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3); outline: none;}
+    nav a:active {background-color: var(--button-bg); color: var(--text-colour); box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3); outline: none;}
     
     .header {display:flex; align-items:stretch; gap:20px; margin-bottom:50px}
     .header-container {display:flex; flex-direction:column; justify-content:space-between}
@@ -39,6 +42,11 @@
       <a href="#charter">charter</a>-->
       <a href="#info">info</a>
     </nav>
+  </div>
+  <div style="flex-grow: 1"></div>
+  <div class=header-container>
+    <button id="theme-toggle">Switch Theme</button>
+  </div>
 </header>
 
 <body>
@@ -58,5 +66,30 @@
 <section id="info">
   <p><a style="text-decoration: none; color:inherit" href="https://discord.gg/7CaDbTyC5" title="Redmont Anarchy">DISCORD SERVER <i class="fas fa-external-link"></i></a></p>
   <p><a style="text-decoration: none; color:inherit" href="https://github.com/epiknice/ra-handbook/">GITHUB <i class="fas fa-external-link"></i></a></p>
+  
 </section>
 </body>
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const bodyEl = document.body;
+
+    // 1. On page load, check if 'light-mode' was saved
+    if (localStorage.getItem('theme') === 'light') {
+        bodyEl.classList.add('light-mode');
+    }
+
+    // 2. Handle the click
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            // Toggle the class on the BODY
+            bodyEl.classList.toggle('light-mode');
+            
+            // 3. Save the current state
+            if (bodyEl.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+</script>
