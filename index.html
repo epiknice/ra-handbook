@@ -1,3 +1,4 @@
+<!--you digusting pervert!-->
 <head>
   <script>
     (function() {
@@ -15,11 +16,11 @@
     :root {--bg-colour:#181A1B; --text-colour:#ffffff; --button-bg:#333333}
     body.light-mode {--bg-colour: #ffffff; --text-colour: #1a1a1a; --button-bg: #f0f0f0}
     body {background-color: var(--bg-colour); color: var(--text-colour); transition: background-color 0.3s ease, color 0.3s ease; font-family:Arial; padding:50px}
-    section {display: none; scroll-margin-top:100px}
+    section {display: none; scroll-margin-top:100px; transition: }
     section:target {display:block}
-    nav a {text-decoration: none; color:inherit; font-weight:600; padding:10px; text-transform:uppercase}
     ol li {padding-bottom:10px}
     h1, img {display:inline-block; vertical-align:middle}
+    nav a {text-decoration: none; color:inherit; font-weight:600; padding:10px; text-transform:uppercase}
     @media (hover: hover) {
       nav a:hover {background-color: var(--button-bg); color: var(--text-colour); box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3); outline: none; transition: background-color 0.2s, box-shadow 0.2s;}
     }
@@ -29,7 +30,9 @@
     .header-container {display:flex; flex-direction:column; justify-content:space-between}
     .header-logo {height:4rem; width:auto; display:block}
     .theme-button {background-color: var(--button-bg); color: var(--text-colour); cursor:pointer; padding:10px; border:0px; border-radius:9999px; margin-top:5px; transition: background-color 0.2s, box-shadow 0.2s}
-    .theme-button:hover {box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3); outline: none}
+    @media (hover: hover) {
+      .theme-button:hover {box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3); outline: none}
+    }
     .theme-button:active {box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.3)}
   </style>
 </head>
@@ -40,8 +43,6 @@
     <h1 style="margin:0px">REDMONT ANARCHY</h1>
     <nav>
       <a href="#manifesto">manifesto</a>
-      <!--<a href="#platform">platform</a>
-      <a href="#charter">charter</a>-->
       <a href="#info">info</a>
     </nav>
   </div>
@@ -52,6 +53,7 @@
 </header>
 
 <body>
+<!--start of manifesto section-->
 <section id="manifesto">
   <h2>MANIFESTO</h2>
   <ol>
@@ -65,9 +67,10 @@
     <li>Freedom of expression should be defended to encourage a diversity of ideas.</li>
   </ol>
 </section>
+<!--start of info section-->
 <section id="info">
-  <p><a style="text-decoration: none; color:inherit" href="https://discord.gg/7CaDbTyC5" title="Redmont Anarchy">DISCORD SERVER <i class="fas fa-external-link"></i></a></p>
-  <p><a style="text-decoration: none; color:inherit" href="https://github.com/epiknice/ra-handbook/">GITHUB <i class="fas fa-external-link"></i></a></p>
+  <p><a style="text-decoration: none; color:inherit" href="https://discord.gg/7CaDbTyC5" title="Redmont Anarchy" target="_blank">DISCORD SERVER <i class="fas fa-external-link"></i></a></p>
+  <p><a style="text-decoration: none; color:inherit" href="https://github.com/epiknice/ra-handbook/" title="Website Github" target="_blank">GITHUB <i class="fas fa-external-link"></i></a></p>
   
 </section>
 </body>
