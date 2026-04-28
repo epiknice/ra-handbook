@@ -73,18 +73,14 @@
     const toggleBtn = document.getElementById('theme-toggle');
     const bodyEl = document.body;
 
-    // 1. On page load, check if 'light-mode' was saved
     if (localStorage.getItem('theme') === 'light') {
         bodyEl.classList.add('light-mode');
     }
 
-    // 2. Handle the click
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            // Toggle the class on the BODY
             bodyEl.classList.toggle('light-mode');
             
-            // 3. Save the current state
             if (bodyEl.classList.contains('light-mode')) {
                 localStorage.setItem('theme', 'light');
             } else {
