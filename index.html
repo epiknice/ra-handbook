@@ -1,6 +1,11 @@
 <head>
   <script>
-    if (!window.location.hash) {window.location.hash = 'manifesto';}
+    (function() {
+      if (!window.location.hash) {
+        window.history.replaceState(null, null, '#manifesto');
+        window.dispatchEvent(new HashChangeEvent('hashchange'));
+      }
+    })();
   </script>
   <meta content="width=device-width, initial-scale=1.0">
   <title>Redmont Anarchy</title>
