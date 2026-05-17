@@ -1,12 +1,20 @@
 <!--you disgusting pervert!-->
 <head>
   <script>
+    <!--makes #manifesto the landing page-->
     (function() {
       if (!window.location.hash) {
         window.history.replaceState(null, null, '#manifesto');
         window.dispatchEvent(new HashChangeEvent('hashchange'));
       }
     })();
+    
+    <!--stops autoscrolling to section on hashchange-->
+    function handleHash() {
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener('hashchange', handleHash);
+    window.addEventListener('load', handleHash);
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redmont Anarchy</title>
@@ -16,8 +24,8 @@
     html {scrollbar-gutter:stable; scroll-behavior:smooth; margin:0px}
     :root {--bg-colour:#181818; --text-colour:#ffffff; --button-bg:#333333}
     body.light-mode {--bg-colour: #ffffff; --text-colour: #1a1a1a; --button-bg: #f0f0f0}
-    body {background-color: var(--bg-colour); color: var(--text-colour); transition: background-color 0.2s ease, color 0.2s ease; font-family:Arial; padding:50px; min-height:100vh; margin:0px}
-    section {display: none; scroll-margin-top:100px}
+    body {background-color: var(--bg-colour); color: var(--text-colour); transition: background-color 0.2s ease, color 0.2s ease; font-family:Arial; padding:50px; min-height:100vh; margin:0px; overflow-anchor: none}
+    section {display: none}
     section:target {display:block}
     h1, img {display:inline-block; vertical-align:middle}
     nav a {text-decoration:none; font-weight:600; color:inherit; padding:10px; text-transform:uppercase; border-radius:9999px}
@@ -117,6 +125,7 @@
 </section>
 </body>
 <script>
+  <!--theme button-->
     const toggleBtn = document.getElementById('theme-toggle');
     const bodyEl = document.body;
 
@@ -135,9 +144,7 @@
             }
         });
     }
-</script>
-<script>
-  <!--Hamburger Menu Toggle-->
+  <!--hamburger toggle-->
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = navMenu.querySelectorAll('a');
