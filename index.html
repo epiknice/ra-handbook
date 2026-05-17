@@ -12,7 +12,7 @@
   <title>Redmont Anarchy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * {box-sizing: border-box}
+    * {box-sizing: border-box; -webkit-tap-highlight-color: transparent}
     html {scrollbar-gutter:stable; scroll-behavior:smooth; margin:0px}
     :root {--bg-colour:#181818; --text-colour:#ffffff; --button-bg:#333333}
     body.light-mode {--bg-colour: #ffffff; --text-colour: #1a1a1a; --button-bg: #f0f0f0}
@@ -23,9 +23,10 @@
     nav a {text-decoration:none; font-weight:600; color:inherit; padding:10px; text-transform:uppercase; border-radius:9999px}
     ol li {padding-bottom:10px}
     @media (hover: hover) {
-      nav a:hover {background-color: var(--button-bg); color: var(--text-colour); box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3); outline: none; transition: background-color 0.2s, box-shadow 0.2s}
+      .theme-button:hover {box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3); outline: none}
+      nav a:hover {background-color: var(--button-bg); color: var(--text-colour); outline: none; transition: background-color 0.2s}
     }
-    nav a:active {box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.3)}
+    nav a:active {box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3)}
 
 
 
@@ -33,11 +34,7 @@
     .header-container {display:flex; flex-direction:column; justify-content:space-between}
     .header-logo {height:4rem; width:auto; display:block}
     .theme-button {background-color: var(--button-bg); color: var(--text-colour); cursor:pointer; padding:10px; border:0px; border-radius:9999px; margin-top:5px; transition: background-color 0.2s, box-shadow 0.2s}
-    .theme-button:active {box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.3)}
-    @media (hover: hover) {
-      .theme-button:hover {box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3); outline: none}
-      nav a:hover {background-color: var(--button-bg); color: var(--text-colour); box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3); outline: none; transition: background-color 0.2s, box-shadow 0.2s;}
-    }
+    .theme-button:active {box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3)}
 
 
 
